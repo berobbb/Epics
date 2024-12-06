@@ -1,8 +1,35 @@
-# React + Vite
+# EPICS Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend and the backend code for the Epics Project.
 
-Currently, two official plugins are available:
+### How to start working?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository using
+
+   ```
+   git clone https://github.com/berobbb/Epics.git
+   ```
+
+2. For Frontend -
+
+   ```
+   cd client
+   ```
+
+3. For Backend -
+
+   ```
+   cd server
+   ```
+
+4. Install the dependencies
+
+   ```
+   npm i
+   ```
+
+5. Run the code
+
+   ```
+   npm run dev
+   ```
