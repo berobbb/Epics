@@ -3,17 +3,23 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Demo from './components/Demo'
+import Nav from './components/Nav'
+import { BrowserRouter } from 'react-router-dom'
+import Hero from './components/Hero'
 
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-   
-    <Demo></Demo>
+    <BrowserRouter>
+    <Nav/>
+    <Hero/>
+    <Demo/>
     
-       </>
+    </BrowserRouter>
+    
+      
   )
 }
 
