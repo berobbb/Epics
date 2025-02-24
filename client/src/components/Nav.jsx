@@ -42,7 +42,7 @@ export default function Nav() {
               </li>
               <li>
                 <Link
-                  to="/on-sale"
+                  to="/categories"
                   className="inline-flex h-9 items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
                 >
                   On Sale
