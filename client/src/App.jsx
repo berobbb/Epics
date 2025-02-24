@@ -5,7 +5,6 @@ import NewArrival from './components/NewArrivals';
 import TopSelling from './components/TopSelling';
 import Testimonials from './components/Testimonial';
 import Categories from './Pages/Categories';
-import NewComp from './Pages/NewComp';
 import ProductDetail from './Pages/ProductDetail';
 import Cart from './Pages/Cart';
 import ScrollToTop from './components/ScrollToTop';
