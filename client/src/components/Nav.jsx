@@ -12,34 +12,7 @@ export default function Nav() {
 
           <div className="hidden md:flex">
             <ul className="flex items-center gap-6">
-              <li className="relative group">
-                <button className="flex items-center gap-1 h-9 px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground">
-                  Shop
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-                <div className="absolute left-0 top-full mt-2 hidden group-hover:block bg-white shadow-md rounded-md">
-                  <div className="grid gap-3 p-4 w-[200px]">
-                    <Link
-                      to="/categories"
-                      className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                    >
-                      All Categories
-                    </Link>
-                    <Link
-                      to="/categories/men"
-                      className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                    >
-                      Men
-                    </Link>
-                    <Link
-                      to="/categories/women"
-                      className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                    >
-                      Women
-                    </Link>
-                  </div>
-                </div>
-              </li>
+              
               <li>
                 <Link
                   to="/categories"
@@ -79,12 +52,14 @@ export default function Nav() {
           </div>
 
           <div className="flex items-center gap-4">
-            <button
+           <Link to="/cart">
+           <button
               className="h-9 w-9 flex items-center justify-center text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
               aria-label="Shopping cart"
             >
               <ShoppingCart className="h-5 w-5" />
             </button>
+           </Link>
             <button
               className="h-9 w-9 flex items-center justify-center text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
               aria-label="User account"

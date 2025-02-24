@@ -1,28 +1,30 @@
+import React from "react";
+import { Star } from "lucide-react"; // Import Star component
+import { Link } from "react-router-dom"; // Import Link component
+import { data as products } from "../../data/data";
 
-import { Star } from "lucide-react"
-import { data as product } from "../../data/data"
-import { Link } from "react-router-dom"
-// function for rating
+// Function for rating
 function ProductRating({ rating }) {
   return (
     <div className="flex items-center">
       {[...Array(5)].map((_, index) => (
-        <Star 
-          key={index} 
+        <Star
+          key={index}
           className={`h-5 w-5 ${
-            index < Math.floor(rating) 
-              ? 'text-yellow-500 fill-yellow-500' 
+            index < Math.floor(rating)
+              ? "text-yellow-500 fill-yellow-500"
               : index === Math.floor(rating) && rating % 1 !== 0
-              ? 'text-yellow-500 fill-yellow-500 opacity-50'
-              : 'text-gray-300'
+              ? "text-yellow-500 fill-yellow-500 opacity-50"
+              : "text-gray-300"
           }`}
         />
       ))}
       <span className="ml-2 text-sm text-gray-600">({rating})</span>
     </div>
-  )
+  );
 }
-// function for card component styling
+
+// Function for card component styling
 function ProductCard({ product }) {
   return (
     <div className="border rounded-lg overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md">
@@ -42,26 +44,26 @@ function ProductCard({ product }) {
         <h3 className="font-semibold mb-2">{product.name}</h3>
         <ProductRating rating={product.rating} />
       </div>
-      <div className="p-4 pt-0 flex items-center gap-2 justify-between">
+      <div className="p-4 pt-0 flex items-center justify-between">
         <span className="text-xl font-bold">${product.price}</span>
-        {product.originalPrice && (
-          <span className="text-sm text-gray-500 line-through">
-            ${product.originalPrice}
-          </span>
-        )}
-         <Link to={`/product/${product.id}`} className="inline-flex items-center justify-center rounded-md text-sm font-medium px-4 py-2 border border-gray-300 bg-black text-[#999999] hover:bg-gray-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Buy Now</Link>
+        <Link
+          to={`/product/${product.id}`}
+          className="inline-flex items-center justify-center rounded-md text-sm font-medium px-4 py-2 border border-gray-300 bg-black text-white hover:bg-gray-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+        >
+          Buy Now
+        </Link>
       </div>
     </div>
-  )
+  );
 }
-// display using map
-export default function TopSelling() {
+
+export default function NewClothes() {
   return (
-    <section className="py-12 px-4">
-      <h2 className="text-4xl font-bold text-center mb-8">Top Selling</h2>
+    <section className="py-12 px-4 mt-32">
+      <h2 className="text-4xl font-bold text-center mb-8">NEW ARRIVALS</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        {product.slice(4,8).map((item) => (
-          <ProductCard key={item.id} product={item} />
+        {products.slice(0, 12).map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
       <div className="text-center mt-8">
@@ -70,5 +72,5 @@ export default function TopSelling() {
         </button>
       </div>
     </section>
-  )
+  );
 }

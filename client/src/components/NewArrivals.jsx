@@ -1,41 +1,8 @@
-
 import { Star } from "lucide-react"
+import { Link } from "react-router-dom";
+import { data as products } from "../../data/data";
 
-const products = [
-  {
-    id: "1",
-    name: "T-shirt with Tape Details",
-    image: "/images/Arrival1.png",
-    price: 120,
-    rating: 4.5,
-  },
-  {
-    id: "2",
-    name: "Skinny Fit Jeans",
-    image: "/images/Arrival2.png",
-    price: 240,
-    originalPrice: 260,
-    discount: 20,
-    rating: 3.5,
-  },
-  {
-    id: "3",
-    name: "Checkered Shirt",
-    image: "/images/Arrival3.png",
-    price: 180,
-    rating: 4.5,
-  },
-  {
-    id: "4",
-    name: "Sleeve Striped T-shirt",
-    image: "/images/Arrival4.png",
-    price: 130,
-    originalPrice: 160,
-    discount: 30,
-    rating: 4.5,
-  },
-]
-// function for rating
+// Function for rating stars
 function ProductRating({ rating }) {
   return (
     <div className="flex items-center">
@@ -53,9 +20,10 @@ function ProductRating({ rating }) {
       ))}
       <span className="ml-2 text-sm text-gray-600">({rating})</span>
     </div>
-  )
+  );
 }
-// function for card component styling
+
+// Function for card component styling
 function ProductCard({ product }) {
   return (
     <div className="border rounded-lg overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md">
@@ -75,32 +43,30 @@ function ProductCard({ product }) {
         <h3 className="font-semibold mb-2">{product.name}</h3>
         <ProductRating rating={product.rating} />
       </div>
-      <div className="p-4 pt-0 flex items-center gap-2">
+      <div className="p-4 pt-0 flex items-center justify-between">
         <span className="text-xl font-bold">${product.price}</span>
-        {product.originalPrice && (
-          <span className="text-sm text-gray-500 line-through">
-            ${product.originalPrice}
-          </span>
-        )}
+        <Link
+          to={`/product/${product.id}`}
+          className="inline-flex items-center justify-center rounded-md text-sm font-medium px-4 py-2 border border-gray-300 bg-black text-white hover:bg-gray-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+        >
+          Buy Now
+        </Link>
       </div>
     </div>
-  )
+  );
 }
-// display using map
+
+// Display using map (Fix applied)
 export default function NewArrival() {
   return (
-    <section className="py-12 px-4">
+    <section className="py-12 px-4 ">
       <h2 className="text-4xl font-bold text-center mb-8">NEW ARRIVALS</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        {products.map((product) => (
+        {products.slice(0, 4).map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-      <div className="text-center mt-8">
-        <button className="inline-flex items-center justify-center rounded-md text-sm font-medium px-4 py-2 border border-gray-300 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-          View All
-        </button>
-      </div>
+      
     </section>
-  )
+  );
 }

@@ -3,13 +3,13 @@ import { Sparkles, ShoppingCart } from "lucide-react";
 export default function Hero() {
   return (
     <div 
-      className="relative h-screen w-full bg-cover bg-no-repeat bg-center" 
+      className="relative h-screen w-full bg-cover bg-no-repeat bg-center  mt-12 " 
       style={{
         backgroundImage: "url('/images/hero_img.png')",
         backgroundSize: 'cover'
       }}
     >
-      <div className="w-full px-0 md:px-0 relative z-10 h-full">
+      <div className="w-full px-0 md:px-0 relative z-10 h-full ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-full items-center px-4 sm:px-6 lg:px-8">
           <div className="text-white space-y-8 py-12">
             <div className="space-y-6 text-black">
