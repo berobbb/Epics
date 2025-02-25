@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Details from '../components/Details';
-import NewArrival from '../components/NewArrivals';
+
 import Like from '../components/Like';
 
 const testimonials = [

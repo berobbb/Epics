@@ -33,6 +33,7 @@ function App() {
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart/>}></Route>
         <Route path="/new-arrivals" element={<NewClothes/>}></Route>
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
     </BrowserRouter>
   );
