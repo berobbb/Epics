@@ -14,12 +14,12 @@ export default function Nav() {
             <ul className="flex items-center gap-6">
               
               <li>
-                <Link
+                {/* <Link
                   to="/categories"
                   className="inline-flex h-9 items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
                 >
                   On Sale
-                </Link>
+                </Link> */}
               </li>
               <li>
                 <Link
@@ -30,12 +30,12 @@ export default function Nav() {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/brands"
+                {/* <Link
+                  to="/"
                   className="inline-flex h-9 items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
                 >
                   Brands
-                </Link>
+                </Link> */}
               </li>
             </ul>
           </div>

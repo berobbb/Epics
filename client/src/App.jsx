@@ -10,6 +10,7 @@ import Cart from './Pages/Cart';
 import ScrollToTop from './components/ScrollToTop';
 import Style from './components/Style';
 import NewClothes from './Pages/NewClothes';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -34,7 +35,9 @@ function App() {
         <Route path="/cart" element={<Cart/>}></Route>
         <Route path="/new-arrivals" element={<NewClothes/>}></Route>
         <Route path="/cart" element={<Cart/>} />
+    
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
