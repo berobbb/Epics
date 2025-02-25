@@ -10,6 +10,8 @@ export default function Cart() {
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('cart')) || [];
     setCartItems(items);
+    console.log("hi");
+    
     calculateSubtotal(items);
   }, []);
 
