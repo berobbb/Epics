@@ -72,4 +72,4 @@ This repository contains the frontend and the backend code for the Epics Project
    git pull origin main
    ```
 
-2. In Case of a conflict **dont** merge, contact admin.
+2. In Case of a conflict **dont** merge, contact adminn.
